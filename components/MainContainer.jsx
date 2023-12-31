@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const MainContainer = () => {
   const [user, setUser] = useState();
+  const [bgColor, setBgColor] = useState();
 
   const apiUrl = "https://randomuser.me/api/";
 
