@@ -13,6 +13,7 @@ const MainContainer = () => {
 
       setUser(userData);
     } catch (error) {
+      console.error("error fetching random user:", error);
     }
   };
 
