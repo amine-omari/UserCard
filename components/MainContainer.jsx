@@ -9,6 +9,9 @@ const MainContainer = () => {
     try {
       const response = await fetch(apiUrl);
       const userData = response.json();
+      console.log(userData);
+
+      setUser(userData);
     } catch (error) {
     }
   };
