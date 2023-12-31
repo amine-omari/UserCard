@@ -7,6 +7,8 @@ const MainContainer = () => {
 
   const searchUser = async () => {
     try {
+      const response = await fetch(apiUrl);
+      const userData = response.json();
     } catch (error) {
     }
   };
