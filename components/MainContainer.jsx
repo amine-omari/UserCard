@@ -2,8 +2,14 @@ import React, { useState } from "react";
 
 const MainContainer = () => {
   const [user, setUser] = useState();
-  
+
   const apiUrl = "https://randomuser.me/api/";
+
+  const searchUser = async () => {
+    try {
+    } catch (error) {
+    }
+  };
 
   return (
     <div className="w-[90%] max-w-[470px] text-white mt-20 mx-auto rounded-3xl py-10 px-7 text-center bg-gradient-to-br from-teal-400 via-teal-500 to-purple-800 space-y-10">
