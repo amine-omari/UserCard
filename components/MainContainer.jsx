@@ -31,9 +31,7 @@ const MainContainer = () => {
   return (
     <div
       className={`${
-        bgColor
-          ? bgColor
-          : "bg-gradient-to-br from-blue-300 via-purple-400 to-purple-800"
+        bgColor ? bgColor : "bg-gray-500"
       } w-[90%] max-w-[470px] text-white mt-20 mx-auto rounded-3xl py-10 px-7 text-center space-y-10`}
     >
       <div>
