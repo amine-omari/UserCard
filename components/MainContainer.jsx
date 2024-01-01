@@ -12,16 +12,17 @@ const MainContainer = () => {
       const userData = await response.json();
       console.log(userData);
       const changeBgColor = () => {
-        const bgColor = userData.results[0].gender;
-        if (bgColor === "male") {
-          return "bg-gradient-to-br from-teal-400 via-teal-500 to-blue-300";
-        } else if (bgColor === "female") {
-          return "bg-gradient-to-br from-purple-200 via-purple-500 to-purple-800";
+        const gender = userData.results[0].gender;
+        switch (gender) {
+          case "male":
+            return "bg-gradient-to-br from-teal-400 via-teal-500 to-blue-300";
+          case "female":
+            return "bg-gradient-to-br from-purple-200 via-purple-500 to-purple-800";
         }
       };
 
-      setUser(userData.results[0]);
       setBgColor(changeBgColor);
+      setUser(userData.results[0]);
     } catch (error) {
       console.error("error fetching random user:", error);
     }
@@ -29,7 +30,11 @@ const MainContainer = () => {
 
   return (
     <div
-      className={`${bgColor} w-[90%] max-w-[470px] text-white mt-20 mx-auto rounded-3xl py-10 px-7 text-center space-y-10`}
+      className={`${
+        bgColor
+          ? bgColor
+          : "bg-gradient-to-br from-blue-300 via-purple-400 to-purple-800"
+      } w-[90%] max-w-[470px] text-white mt-20 mx-auto rounded-3xl py-10 px-7 text-center space-y-10`}
     >
       <div>
         <button
