@@ -11,8 +11,17 @@ const MainContainer = () => {
       const response = await fetch(apiUrl);
       const userData = await response.json();
       console.log(userData);
+      const changeBgColor = () => {
+        const bgColor = userData.results[0].gender;
+        if (bgColor === "male") {
+          return "bg-gradient-to-br from-teal-400 via-teal-500 to-blue-300";
+        } else if (bgColor === "female") {
+          return "bg-gradient-to-br from-purple-200 via-purple-500 to-purple-800";
+        }
+      };
 
       setUser(userData.results[0]);
+      setBgColor(changeBgColor);
     } catch (error) {
       console.error("error fetching random user:", error);
     }
