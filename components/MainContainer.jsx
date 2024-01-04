@@ -13,11 +13,10 @@ const MainContainer = () => {
       console.log(userData);
       const changeBgColor = () => {
         const gender = userData.results[0].gender;
-        switch (gender) {
-          case "male":
-            return "bg-gradient-to-br from-teal-400 via-teal-500 to-blue-300";
-          case "female":
-            return "bg-gradient-to-br from-purple-200 via-purple-500 to-purple-800";
+        if (gender === "male") {
+          return "bg-gradient-to-br from-teal-400 via-teal-500 to-blue-300";
+        } else {
+          return "bg-gradient-to-br from-purple-200 via-purple-500 to-purple-800";
         }
       };
 
@@ -62,7 +61,7 @@ const MainContainer = () => {
                 {user.name.first} {user.name.last}
               </h1>
             </div>
-            <p className="text-gray-200 text-xl">+212 {user.phone}</p>
+            <p className="text-gray-200 text-xl">{user.phone}</p>
           </div>
         </div>
       )}
